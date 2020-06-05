@@ -24,5 +24,5 @@ Las tareas que podemos agrupar son: [T1, T2] - [T6, T7]
 
 ![Alt text](imagenes/map.JPG)
 
-Sincróno: [T5] por que lee el número de alelos en cada generación y la ejecución puede continuar
+Sincróno: [T5] por que lee el número de alelos en cada generación y la ejecución puede continuar  
 Asincronico: [T6, T7] por que el maestro esta esperando la probabilidad en el tiempo t y t+1 para continuar la ejecución
