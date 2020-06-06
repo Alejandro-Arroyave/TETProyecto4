@@ -10,6 +10,7 @@ using namespace std;
 
 int NoPerm(int val){
     int p = 1;
+#pragma omp parallel for reduction (*:p)
     for(int i=val; i > 1; i--){
         p=p*i;
     }
@@ -20,38 +21,42 @@ void ListaPerm(int val){
    vector<int> integers(val);
 	int i=1;
 	generate(integers.begin(),integers.end(),[&i](){return i++;});
-	ostream_iterator<int> os(cout," ");
-
-	
+ 
 	while(1)
 	{
-	  //copy(integers.begin(),integers.end(),os);
-	       
-	
 		auto it_k = integers.end();
 		auto it_l = integers.end();
-
-		for( auto it = integers.begin(); it+1!=integers.end(); ++it)
+		
+#pragma omp parallel for 
+		for( auto it = integers.begin(); it != (integers.end()-1); ++it)
 		{
-			if ( *it < *(it+1) ) it_k = it;
+		  if ( *it < *(it+1) ){
+		    #pragma omp critical
+		    it_k = it;
+		  }
+		  
 		}
-
+	
 		if ( it_k == integers.end() )
 			return;
-
+		#pragma omp parallel for
 		for( auto it = it_k+1; it!=integers.end(); ++it)
 		{
-			if ( *it_k < *it ) it_l = it;
+		  if ( *it_k < *it ){
+		    #pragma omp critical
+		    it_l = it;
+		  }
 		}
 	
 		iter_swap(it_k,it_l);
 		reverse(it_k+1,integers.end());
 	}
+	
 }
 
 int main()
 {
-	int perm = 12;
+	int perm = 6;
 	const double t0 = omp_get_wtime();
 	printf("Numero: %d\n", NoPerm(perm));
 	ListaPerm(perm);

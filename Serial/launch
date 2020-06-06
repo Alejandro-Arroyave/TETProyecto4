@@ -1,6 +1,0 @@
-#PBS -N tetpro
-cd ~/TETProyecto4/Serial
-echo Starting calculation
-./app
-echo End of calculation
-

@@ -1,5 +1,5 @@
 #PBS -N tetpro
-cd ~/TETProyecto4/Serial
+cd ~/TETProyecto4/OpenMP
 echo Starting calculation
 ./app
 echo End of calculation
