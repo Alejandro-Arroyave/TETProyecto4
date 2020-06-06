@@ -8,14 +8,6 @@
 
 using namespace std;
 
-void swap(int *x, int *y) 
-{ 
-    int temp; 
-    temp = *x; 
-    *x = *y; 
-    *y = temp; 
-} 
-
 int NoPerm(int val){
     int p = 1;
     for(int i=val; i > 1; i--){
@@ -33,8 +25,8 @@ void ListaPerm(int val){
 	
 	while(1)
 	{
-		copy(integers.begin(),integers.end(),os);
-		printf();
+	  //copy(integers.begin(),integers.end(),os);
+	       
 	
 		auto it_k = integers.end();
 		auto it_l = integers.end();
@@ -59,8 +51,11 @@ void ListaPerm(int val){
 
 int main()
 {
-	int perm = 3;
-
-	printf(NoPerm(perm);
+	int perm = 12;
+	const double t0 = omp_get_wtime();
+	printf("Numero: %d\n", NoPerm(perm));
 	ListaPerm(perm);
+	const double t1 = omp_get_wtime();
+	printf("Time: %f\n", t1-t0);
+
 }

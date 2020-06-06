@@ -8,8 +8,8 @@ default : app
 perm.o : perm.cc
 	${CXX} -c ${OPTRPT} ${CXXFLAGS} -o "$@" "$<"
 
-app : perm.cc perm.o
-	${CXX} ${OPTRPT} ${CXXFLAGS} -o "$@" "$<" perm.o
+app :  perm.o
+	${CXX} ${OPTRPT} ${CXXFLAGS} -o "$@" "$<"
 
 clean :
 	rm app perm.o *.optrpt
