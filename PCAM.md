@@ -23,10 +23,6 @@ Las tareas que podemos agrupar son: [T1-T2] [T5-T6]
 
 ![Alt text](imagenes/map.JPG)
 
-<<<<<<< HEAD
-Sincróno: [T4] por que crea un intervalo para cada permutación y la ejecución puede continuar
+
+Sincróno: [T4] por que crea un intervalo para cada permutación y la ejecución puede continuar  
 Asincronico: [T7] por que el maestro esta esperando que todos los procesadores calculen cada permutacion
-=======
-Sincróno: [T5] por que lee el número de alelos en cada generación y la ejecución puede continuar  
-Asincronico: [T6, T7] por que el maestro esta esperando la probabilidad en el tiempo t y t+1 para continuar la ejecución
->>>>>>> fd26999f37877372ecf13b1ad8c9f924cf3b1633
